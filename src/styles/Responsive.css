@@ -74,6 +74,11 @@
     font-size: 0.95rem;
   }
 
+  /* Navbar adjustments */
+  .navbar-container {
+    padding: 10px 15px;
+  }
+
   /* Simplify glass effects for better performance */
   .glass-card {
     backdrop-filter: blur(12px) saturate(150%);
