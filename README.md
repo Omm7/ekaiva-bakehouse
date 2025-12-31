@@ -1,4 +1,4 @@
-# 🍽️ Num Num Resturant - Restaurant Website
+# 🍽️ Numm Numm Resturant - Restaurant Website
 
 A modern, fully responsive, and beautifully animated restaurant website built with React.js. Features smooth animations, an interactive menu, shopping cart functionality, and a professional design perfect for any restaurant business.
 

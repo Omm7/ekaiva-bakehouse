@@ -14,9 +14,9 @@ const Hero = () => {
       <div className="hero-overlay"></div>
       <div className="hero-content animate-fade-in">
         <div className="hero-logo">
-          <img src="/logo.png" alt="Num Num Resturant Logo" className="hero-logo-image" />
+          <img src="/logo.png" alt="Numm Numm Resturant Logo" className="hero-logo-image" />
         </div>
-        <h1 className="hero-title">Num Num Resturant</h1>
+        <h1 className="hero-title">Numm Numm Resturant</h1>
         <p className="hero-tagline">Where Every Bite is Full of Freshness & Flavour!</p>
         <p className="hero-description">
           Family-friendly restaurant serving authentic Biryani, Mutton, Chicken, and traditional 
