@@ -14,9 +14,9 @@ const Hero = () => {
       <div className="hero-overlay"></div>
       <div className="hero-content animate-fade-in">
         <div className="hero-logo">
-          <img src="/logo.png" alt="ekaiva bakehouse Logo" className="hero-logo-image" />
+          <img src="/logo.png" alt="cafe farmhouse Logo" className="hero-logo-image" />
         </div>
-        <h1 className="hero-title">ekaiva bakehouse</h1>
+        <h1 className="hero-title">cafe farmhouse</h1>
         <p className="hero-tagline">Where Every Sip & Bite Feels Like Home</p>
         <p className="hero-description">
           A cozy aesthetic cafe serving artisan coffee, freshly baked pastries, handcrafted cakes, 

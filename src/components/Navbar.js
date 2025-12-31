@@ -44,8 +44,8 @@ const Navbar = ({ cartItemCount, toggleCart, isDarkTheme, toggleTheme }) => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isHidden ? 'hidden' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-logo" onClick={() => scrollToSection('home')}>
-          <img src="/logo.png" alt="ekaiva bakehouse Logo" className="logo-image" />
-          <span className="logo-text">ekaiva bakehouse</span>
+          <img src="/logo.png" alt="cafe farmhouse Logo" className="logo-image" />
+          <span className="logo-text">cafe farmhouse</span>
         </div>
 
         <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>

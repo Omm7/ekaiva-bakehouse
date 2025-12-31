@@ -6,10 +6,10 @@ const About = () => {
     <section id="about" className="about-section">
       <div className="about-container">
         <div className="about-content animate-on-scroll">
-          <h2 className="section-title">About ekaiva bakehouse</h2>
+          <h2 className="section-title">About cafe farmhouse</h2>
           <div className="about-text">
             <p className="about-intro">
-              Welcome to ekaiva bakehouse, your aesthetic neighborhood cafe where 
+              Welcome to cafe farmhouse, your aesthetic neighborhood cafe where 
               warmth meets artistry. We craft exceptional coffee, bake fresh pastries daily, and 
               create a cozy space perfect for work, relaxation, or catching up with friends.
             </p>

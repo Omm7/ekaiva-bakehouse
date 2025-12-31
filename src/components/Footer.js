@@ -9,8 +9,8 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-section">
           <div className="footer-logo">
-            <img src="/logo.png" alt="ekaiva bakehouse Logo" className="footer-logo-image" />
-            <span className="logo-text">ekaiva bakehouse</span>
+            <img src="/logo.png" alt="cafe farmhouse Logo" className="footer-logo-image" />
+            <span className="logo-text">cafe farmhouse</span>
           </div>
           <p className="footer-description">
             Your cozy neighborhood cafe serving artisan coffee, fresh pastries, and delightful treats. 

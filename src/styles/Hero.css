@@ -5,8 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1600');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -19,7 +19,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(168, 32, 62, 0.3), rgba(212, 175, 55, 0.3));
+  background: linear-gradient(135deg, rgba(176, 137, 104, 0.2), rgba(221, 184, 146, 0.2));
 }
 
 .hero-content {
@@ -41,8 +41,8 @@
 }
 
 .hero-logo-image {
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   border-radius: 50%;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
