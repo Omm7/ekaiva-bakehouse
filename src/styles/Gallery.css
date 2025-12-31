@@ -1,0 +1,138 @@
+/* Gallery Section */
+.gallery-section {
+  padding: 100px 0;
+  background: var(--bg-gradient);
+  overflow: hidden;
+}
+
+.gallery-scroll-container {
+  margin-top: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-scroll-container::before,
+.gallery-scroll-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gallery-scroll-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-primary), transparent);
+}
+
+.gallery-scroll-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-primary), transparent);
+}
+
+.gallery-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 40s linear infinite;
+  width: fit-content;
+}
+
+.gallery-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.gallery-item {
+  position: relative;
+  min-width: 400px;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(168, 32, 62, 0.8), rgba(212, 175, 55, 0.8));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-icon {
+  font-size: 4rem;
+  animation: rotateIn 0.5s ease;
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(-180deg) scale(0);
+  }
+  to {
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 80px 0;
+  }
+
+  .gallery-item {
+    min-width: 300px;
+    height: 250px;
+  }
+
+  .gallery-scroll-container::before,
+  .gallery-scroll-container::after {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    min-width: 250px;
+    height: 200px;
+  }
+
+  .gallery-icon {
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,263 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Light Theme Colors - Professional & Attractive for Dadda Biriyani */
+  --primary-color: #a8203e;
+  --secondary-color: #d4af37;
+  --accent-color: #7c1c2e;
+  --dark-color: #1a1a1a;
+  --light-color: #ffffff;
+  --gray-color: #6c757d;
+  --light-gray: #f8f9fa;
+  --bg-primary: #ffffff;
+  --bg-secondary: #fff8f0;
+  --bg-gradient: linear-gradient(135deg, #fff8f0 0%, #ffffff 100%);
+  --text-primary: #2c2c2c;
+  --text-secondary: #6c757d;
+  --card-bg: #ffffff;
+  --shadow: 0 4px 20px rgba(168, 32, 62, 0.12);
+  --shadow-hover: 0 8px 30px rgba(168, 32, 62, 0.18);
+  --border-color: #f5e6ea;
+  --success-color: #4caf50;
+  --danger-color: #dc3545;
+  --transition: all 0.3s ease;
+}
+
+/* Dark Theme Colors */
+body.dark-theme {
+  --primary-color: #c94d6a;
+  --secondary-color: #e8c968;
+  --accent-color: #a8203e;
+  --dark-color: #ffffff;
+  --light-color: #1a1a1a;
+  --gray-color: #b0b0b0;
+  --light-gray: #2d2d2d;
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-gradient: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --card-bg: #2d2d2d;
+  --shadow: 0 4px 20px rgba(201, 77, 106, 0.2);
+  --shadow-hover: 0 8px 30px rgba(201, 77, 106, 0.3);
+  --border-color: #404040;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  overflow-x: hidden;
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-top: 20px;
+}
+
+/* Button Styles */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Loading Animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* Tablet Optimization */
+@media (min-width: 577px) and (max-width: 992px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+/* Desktop Optimization */
+@media (min-width: 993px) and (max-width: 1400px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1401px) {
+  .container {
+    max-width: 1320px;
+  }
+}
