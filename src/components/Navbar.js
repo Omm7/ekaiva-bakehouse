@@ -44,8 +44,8 @@ const Navbar = ({ cartItemCount, toggleCart, isDarkTheme, toggleTheme }) => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isHidden ? 'hidden' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-logo" onClick={() => scrollToSection('home')}>
-          <img src="/logo.png" alt="Dadda Biriyani Cuttack Logo" className="logo-image" />
-          <span className="logo-text">Dadda Biriyani Cuttack</span>
+          <img src="/logo.png" alt="Dada Biriyani Logo" className="logo-image" />
+          <span className="logo-text">Dada Biriyani</span>
         </div>
 
         <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
