@@ -6,10 +6,10 @@ const About = () => {
     <section id="about" className="about-section">
       <div className="about-container">
         <div className="about-content animate-on-scroll">
-          <h2 className="section-title">About Dadda Biriyani Cuttack</h2>
+          <h2 className="section-title">About Num Num Resturant</h2>
           <div className="about-text">
             <p className="about-intro">
-              Welcome to Dadda Biriyani Cuttack, your family-friendly restaurant 
+              Welcome to Num Num Resturant, your family-friendly restaurant 
               in Cuttack. We serve authentic Biryani, Mutton, Chicken, Prawns, and traditional 
               Indian dishes with uncompromising quality.
             </p>

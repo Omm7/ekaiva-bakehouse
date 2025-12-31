@@ -9,8 +9,8 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-section">
           <div className="footer-logo">
-            <img src="/logo.png" alt="Dadda Biriyani Cuttack Logo" className="footer-logo-image" />
-            <span className="logo-text">Dadda Biriyani Cuttack</span>
+            <img src="/logo.png" alt="Num Num Resturant Logo" className="footer-logo-image" />
+            <span className="logo-text">Num Num Resturant</span>
           </div>
           <p className="footer-description">
             Family restaurant serving authentic Biryani, Mutton, Chicken, and traditional 
