@@ -203,4 +203,8 @@
     padding: 12px 30px;
     font-size: 1rem;
   }
+  
+  .hero-scroll-indicator {
+    display: none;
+  }
 }
