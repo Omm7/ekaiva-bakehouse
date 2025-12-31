@@ -260,354 +260,32 @@
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Dynamic Island Menu - Mobile Only */
-.dynamic-island {
-  display: none;
-}
-
-@media (max-width: 968px) {
-  .dynamic-island {
-    display: flex;
-    position: fixed;
-    top: 70px;
-    left: 50%;
-    transform: translateX(-50%) translateZ(0);
-    z-index: 2001;
-    background: linear-gradient(145deg, 
-      rgba(25, 25, 28, 0.98) 0%, 
-      rgba(18, 18, 20, 0.99) 50%,
-      rgba(12, 12, 15, 0.98) 100%);
-    backdrop-filter: blur(80px) saturate(200%) brightness(1.2) contrast(1.1);
-    -webkit-backdrop-filter: blur(80px) saturate(200%) brightness(1.2) contrast(1.1);
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    border-radius: 50px;
-    padding: 14px 32px;
-    cursor: pointer;
-    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9),
-                0 10px 30px rgba(176, 137, 104, 0.4),
-                0 5px 15px rgba(221, 184, 146, 0.3),
-                0 0 1px 2px rgba(255, 255, 255, 0.2),
-                inset 0 2px 8px rgba(255, 255, 255, 0.15),
-                inset 0 -3px 8px rgba(0, 0, 0, 0.4),
-                inset 2px 0 8px rgba(176, 137, 104, 0.1),
-                inset -2px 0 8px rgba(176, 137, 104, 0.1);
-    pointer-events: all;
-    min-width: 160px;
-    align-items: center;
-    justify-content: center;
-    overflow: visible;
-    animation: islandFloat 4s ease-in-out infinite, islandGlow 3s ease-in-out infinite;
-    will-change: transform;
-  }
-
-  .dynamic-island::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    background: conic-gradient(from 0deg at 50% 50%, 
-      rgba(176, 137, 104, 0.8) 0deg,
-      rgba(221, 184, 146, 0.9) 90deg,
-      rgba(255, 215, 0, 0.7) 180deg,
-      rgba(221, 184, 146, 0.9) 270deg,
-      rgba(176, 137, 104, 0.8) 360deg);
-    border-radius: 50px;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    z-index: -1;
-    filter: blur(20px);
-    animation: rotate360 8s linear infinite;
-  }
-
-  @keyframes rotate360 {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  .dynamic-island::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 0deg, 
-      transparent 0deg,
-      rgba(255, 255, 255, 0.4) 10deg,
-      transparent 30deg,
-      transparent 330deg,
-      rgba(255, 255, 255, 0.4) 350deg,
-      transparent 360deg);
-    animation: shimmerSpin 4s linear infinite;
-    border-radius: 50%;
-  }
-
-  @keyframes shimmerSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  @keyframes islandFloat {
-    0%, 100% {
-      transform: translateX(-50%) translateY(0) translateZ(0);
-    }
-    50% {
-      transform: translateX(-50%) translateY(-3px) translateZ(0);
-    }
-  }
-
-  @keyframes islandGlow {
-    0%, 100% {
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9),
-                  0 10px 30px rgba(176, 137, 104, 0.4),
-                  0 5px 15px rgba(221, 184, 146, 0.3),
-                  0 0 1px 2px rgba(255, 255, 255, 0.2),
-                  inset 0 2px 8px rgba(255, 255, 255, 0.15),
-                  inset 0 -3px 8px rgba(0, 0, 0, 0.4);
-    }
-    50% {
-      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95),
-                  0 15px 45px rgba(176, 137, 104, 0.6),
-                  0 8px 25px rgba(221, 184, 146, 0.5),
-                  0 0 2px 3px rgba(255, 255, 255, 0.3),
-                  inset 0 2px 10px rgba(255, 255, 255, 0.2),
-                  inset 0 -4px 10px rgba(0, 0, 0, 0.5);
-    }
-  }
-
-  .dynamic-island:hover {
-    transform: translateX(-50%) scale(1.08) translateY(-2px) translateZ(0);
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.95),
-                0 20px 60px rgba(176, 137, 104, 0.7),
-                0 10px 35px rgba(221, 184, 146, 0.6),
-                0 5px 20px rgba(255, 215, 0, 0.4),
-                0 0 3px 4px rgba(255, 255, 255, 0.35),
-                inset 0 3px 12px rgba(255, 255, 255, 0.25),
-                inset 0 -4px 12px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(100px) saturate(220%) brightness(1.3) contrast(1.15);
-    -webkit-backdrop-filter: blur(100px) saturate(220%) brightness(1.3) contrast(1.15);
-  }
-
-  .dynamic-island:hover::before {
-    opacity: 1;
-    filter: blur(25px);
-    animation: rotate360 4s linear infinite;
-  }
-
-  .dynamic-island:hover::after {
-    animation: shimmerSpin 2s linear infinite;
-  }
-
-  .dynamic-island:active {
-    transform: translateX(-50%) scale(0.96) translateZ(0);
-    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .dynamic-island.expanded {
-    width: 350px;
-    max-height: 540px;
-    border-radius: 42px;
-    padding: 12px;
-    background: linear-gradient(145deg, 
-      rgba(25, 25, 28, 0.99) 0%, 
-      rgba(18, 18, 20, 1) 50%,
-      rgba(12, 12, 15, 0.99) 100%);
-    backdrop-filter: blur(100px) saturate(200%) brightness(1.25) contrast(1.15);
-    -webkit-backdrop-filter: blur(100px) saturate(200%) brightness(1.25) contrast(1.15);
-    overflow: hidden;
-    animation: expandIsland 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 35px 100px rgba(0, 0, 0, 0.95),
-                0 20px 60px rgba(176, 137, 104, 0.5),
-                0 10px 35px rgba(221, 184, 146, 0.4),
-                0 0 2px 3px rgba(255, 255, 255, 0.3),
-                inset 0 3px 10px rgba(255, 255, 255, 0.18),
-                inset 0 -4px 10px rgba(0, 0, 0, 0.5);
-  }
-
-  .dynamic-island.expanded::before {
-    opacity: 0.8;
-    filter: blur(30px);
-  }
-
-  @keyframes expandIsland {
-    0% {
-      width: 160px;
-      border-radius: 50px;
-      transform: translateX(-50%) scale(0.92);
-      opacity: 0.95;
-    }
-    60% {
-      width: 370px;
-      border-radius: 40px;
-      transform: translateX(-50%) scale(1.03);
-      opacity: 1;
-    }
-    100% {
-      width: 350px;
-      border-radius: 42px;
-      transform: translateX(-50%) scale(1);
-      opacity: 1;
-    }
-  }
-
-  .island-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .island-icon {
-    font-size: 1.4rem;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.5));
-    text-shadow: 0 0 12px rgba(176, 137, 104, 0.6),
-                 0 0 20px rgba(221, 184, 146, 0.4);
-    animation: iconPulse 2s ease-in-out infinite;
-  }
-
-  @keyframes iconPulse {
-    0%, 100% {
-      filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.5));
-    }
-    50% {
-      filter: drop-shadow(0 4px 12px rgba(176, 137, 104, 0.6));
-    }
-  }
-
-  .dynamic-island:hover .island-icon {
-    transform: scale(1.3) rotate(15deg);
-    text-shadow: 0 0 20px rgba(176, 137, 104, 1),
-                 0 0 35px rgba(221, 184, 146, 0.7),
-                 0 0 50px rgba(255, 215, 0, 0.5);
-    filter: drop-shadow(0 5px 15px rgba(176, 137, 104, 0.8));
-  }
-
-  .island-text {
-    font-size: 0.95rem;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    font-weight: 800;
-    background: linear-gradient(135deg, 
-      #ffffff 0%, 
-      #f5f5f5 25%,
-      #ffffff 50%,
-      #e8e8e8 75%,
-      #ffffff 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 2px 10px rgba(255, 255, 255, 0.4));
-    animation: textShimmer 3s linear infinite, textGlow 2s ease-in-out infinite;
-  }
-
-  @keyframes textShimmer {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
-  }
-
-  @keyframes textGlow {
-    0%, 100% {
-      filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
-    }
-    50% {
-      filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7))
-              drop-shadow(0 0 20px rgba(176, 137, 104, 0.5));
-    }
-  }
-
-  .island-close {
-    font-size: 1.6rem;
-    color: #ffffff;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.5));
-    opacity: 0.95;
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4),
-                 0 0 20px rgba(176, 137, 104, 0.3);
-  }
-
-  .dynamic-island:hover .island-close {
-    transform: rotate(90deg) scale(1.3);
-    opacity: 1;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
-                 0 0 35px rgba(176, 137, 104, 0.6),
-                 0 0 50px rgba(221, 184, 146, 0.4);
-    filter: drop-shadow(0 5px 15px rgba(176, 137, 104, 0.8));
-  }
-}
-
 /* Mobile Responsive */
 @media (max-width: 968px) {
   .navbar-menu {
     position: fixed;
-    top: 70px;
-    left: 50%;
-    transform: translateX(-50%) translateY(0) translateZ(0);
-    width: 350px;
-    max-height: 540px;
-    background: linear-gradient(145deg, 
-      rgba(25, 25, 28, 0.99) 0%, 
-      rgba(18, 18, 20, 1) 50%,
-      rgba(12, 12, 15, 0.99) 100%);
-    backdrop-filter: blur(100px) saturate(200%) brightness(1.25) contrast(1.15);
-    -webkit-backdrop-filter: blur(100px) saturate(200%) brightness(1.25) contrast(1.15);
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100vh;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-amount)) saturate(180%);
+    -webkit-backdrop-filter: blur(var(--blur-amount)) saturate(180%);
     flex-direction: column;
-    padding: 60px 12px 18px 12px;
-    box-shadow: 0 35px 100px rgba(0, 0, 0, 0.95),
-                0 20px 60px rgba(176, 137, 104, 0.5),
-                0 10px 35px rgba(221, 184, 146, 0.4),
-                0 0 2px 3px rgba(255, 255, 255, 0.3),
-                inset 0 3px 10px rgba(255, 255, 255, 0.18),
-                inset 0 -4px 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    align-items: center;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    border-radius: 42px;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 2000;
-    overflow-y: auto;
-    overflow-x: hidden;
-    gap: 10px;
+    justify-content: flex-start;
+    padding: 80px 20px 20px;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.1);
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    gap: 0;
   }
 
   .navbar-menu.active {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  .navbar-menu::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .navbar-menu::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-  }
-
-  .navbar-menu::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, 
-      rgba(176, 137, 104, 0.6) 0%, 
-      rgba(221, 184, 146, 0.6) 100%);
-    border-radius: 10px;
-  }
-
-  .navbar-menu::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, 
-      rgba(176, 137, 104, 0.8) 0%, 
-      rgba(221, 184, 146, 0.8) 100%);
+    left: 0;
   }
 
   .mobile-menu-btn {
-    display: none;
+    display: flex;
   }
 
   .reserve-btn {
@@ -615,74 +293,26 @@
   }
 
   .nav-link {
-    font-size: 1.05rem;
-    padding: 18px 28px;
-    width: 95%;
-    text-align: center;
-    border-radius: 26px;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    color: rgba(255, 255, 255, 0.92);
-    font-weight: 700;
-    letter-spacing: 0.6px;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(15px);
-    border: 1px solid transparent;
-    background: rgba(255, 255, 255, 0.03);
+    font-size: 1rem;
+    padding: 15px 0;
+    width: 100%;
+    text-align: left;
   }
 
   .nav-link::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, 
-      rgba(176, 137, 104, 0.25) 0%, 
-      rgba(221, 184, 146, 0.3) 50%,
-      rgba(255, 215, 0, 0.2) 100%);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    z-index: 0;
+    display: none;
   }
 
   .nav-link::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
+    display: none;
   }
-
-  .nav-link:hover::after {
-    width: 300px;
-    height: 300px;
+  
+  .theme-toggle-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
   }
-
-  .nav-link:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.04) translateZ(0);
-    color: #ffffff;
-    box-shadow: 0 8px 30px rgba(176, 137, 104, 0.5),
-                0 4px 15px rgba(221, 184, 146, 0.4),
-                0 2px 8px rgba(0, 0, 0, 0.4),
-                inset 0 2px 4px rgba(255, 255, 255, 0.25),
-                inset 0 -2px 4px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  }
-
-  .nav-link:hover::before {
-    opacity: 1;
-  }
-
-  .nav-link:active {
-    transform: scale(0.96) translateZ(0);
-    transition: all 0.12s ease;
-  }
+}
   
   .theme-toggle-btn {
     width: 40px;

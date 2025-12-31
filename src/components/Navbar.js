@@ -41,22 +41,7 @@ const Navbar = ({ cartItemCount, toggleCart, isDarkTheme, toggleTheme }) => {
   };
 
   return (
-    <>
-      {/* Dynamic Island Menu - Mobile Only */}
-      <div className={`dynamic-island ${isMobileMenuOpen ? 'expanded' : ''}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-        <div className="island-content">
-          {!isMobileMenuOpen ? (
-            <>
-              <span className="island-icon">☰</span>
-              <span className="island-text">Menu</span>
-            </>
-          ) : (
-            <span className="island-close">✕</span>
-          )}
-        </div>
-      </div>
-
-      <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isHidden ? 'hidden' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isHidden ? 'hidden' : ''}`}>
         <div className="navbar-container">
         <div className="navbar-logo" onClick={() => scrollToSection('home')}>
           <img src="/logo.png" alt="cafe farmhouse Logo" className="logo-image" />
@@ -94,7 +79,6 @@ const Navbar = ({ cartItemCount, toggleCart, isDarkTheme, toggleTheme }) => {
         </div>
       </div>
     </nav>
-    </>
   );
 };
 
