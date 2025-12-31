@@ -32,7 +32,7 @@ const Features = () => {
           <div 
             key={index} 
             className="feature-card animate-on-scroll"
-            style={{ animationDelay: `${index * 0.1}s` }}
+            style={{ transitionDelay: `${index * 0.15}s` }}
           >
             <div className="feature-icon">{feature.icon}</div>
             <h3 className="feature-title">{feature.title}</h3>
