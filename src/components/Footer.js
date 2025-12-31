@@ -51,14 +51,14 @@ const Footer = () => {
             <li>📍 Golden Plaza, Station Road</li>
             <li>   Market Area, Cuttack - 753012</li>
             <li>📞 +91 98765 43210</li>
-            <li>✉️ hello@dellyybellyy.com</li>
+            <li>✉️ hello@cafefarmhouse.com</li>
           </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {currentYear} Dada Biriyani. All rights reserved.</p>
-        <p className="footer-credit">Crafted with ❤️ for food lovers</p>
+        <p>&copy; {currentYear} cafe farmhouse. All rights reserved.</p>
+        <p className="footer-credit">Crafted with ❤️ for coffee & pastry lovers</p>
       </div>
     </footer>
   );
