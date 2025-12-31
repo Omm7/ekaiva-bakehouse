@@ -74,6 +74,7 @@
   box-shadow: var(--shadow);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid var(--glass-border);
+  transform: translateZ(0);
 }
 
 .gallery-item::before {
@@ -92,7 +93,7 @@
 }
 
 .gallery-item:hover {
-  transform: scale(1.08) translateY(-10px);
+  transform: scale(1.08) translateY(-10px) translateZ(0);
   box-shadow: var(--shadow-hover);
 }
 

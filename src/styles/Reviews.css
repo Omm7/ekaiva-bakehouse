@@ -76,6 +76,7 @@
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   border: 1px solid var(--glass-border);
+  transform: translateZ(0);
 }
 
 .review-card::before {
@@ -106,7 +107,7 @@
 }
 
 .review-card:hover {
-  transform: translateY(-12px) scale(1.02);
+  transform: translateY(-12px) scale(1.02) translateZ(0);
   box-shadow: var(--shadow-hover);
   border-color: var(--primary-color);
 }
