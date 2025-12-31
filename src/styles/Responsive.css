@@ -1,0 +1,286 @@
+/* Comprehensive Responsive Design for All Screen Sizes */
+
+/* Extra Large Screens (1400px+) - Default styles apply */
+
+/* Large Desktops (1200px - 1400px) */
+@media (max-width: 1400px) {
+  :root {
+    --blur-amount: 18px;
+  }
+  
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Standard Laptops & Desktops (992px - 1200px) */
+@media (max-width: 1200px) {
+  :root {
+    --blur-amount: 16px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.05rem;
+  }
+}
+
+/* Tablets Landscape & Small Laptops (768px - 992px) */
+@media (max-width: 992px) {
+  :root {
+    --blur-amount: 14px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .section-title {
+    font-size: 2.3rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Reduce animation intensity on tablets */
+  .hover-lift-premium:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  .glass-card:hover::before {
+    opacity: 0.4;
+  }
+}
+
+/* Tablets Portrait (576px - 768px) */
+@media (max-width: 768px) {
+  :root {
+    --blur-amount: 12px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* Simplify glass effects for better performance */
+  .glass-card {
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+  }
+
+  /* Reduce shadow intensity */
+  .premium-btn {
+    box-shadow: 0 6px 18px rgba(176, 137, 104, 0.3);
+  }
+
+  .premium-btn:hover {
+    box-shadow: 0 8px 24px rgba(176, 137, 104, 0.4);
+  }
+
+  /* Adjust hover effects */
+  .hover-lift-premium:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+}
+
+/* Mobile Landscape & Large Phones (480px - 576px) */
+@media (max-width: 576px) {
+  :root {
+    --blur-amount: 10px;
+  }
+
+  body {
+    font-size: 13px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  /* Further optimize glass effects */
+  .glass-card {
+    backdrop-filter: blur(10px) saturate(130%);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+  }
+
+  /* Simplify animations */
+  .hover-lift-premium:hover {
+    transform: translateY(-4px);
+  }
+
+  .premium-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+
+  /* Reduce shadow complexity */
+  .premium-btn {
+    box-shadow: 0 4px 12px rgba(176, 137, 104, 0.25);
+  }
+}
+
+/* Mobile Portrait (320px - 480px) */
+@media (max-width: 480px) {
+  :root {
+    --blur-amount: 8px;
+  }
+
+  body {
+    font-size: 13px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+  }
+
+  /* Minimal glass effects for performance */
+  .glass-card {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* Disable complex animations on small mobile */
+  .shimmer-effect {
+    animation: none;
+  }
+
+  /* Simplify button effects */
+  .premium-btn::before {
+    display: none;
+  }
+
+  .premium-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Reduce padding and spacing */
+  .container {
+    padding: 0 12px;
+  }
+}
+
+/* Extra Small Devices (320px and below) */
+@media (max-width: 360px) {
+  body {
+    font-size: 12px;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.8rem;
+  }
+
+  /* Minimal effects */
+  .glass-card {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  /* Disable floating animations */
+  .float-animation {
+    animation: none;
+  }
+
+  .glow-pulse {
+    animation: none;
+  }
+}
+
+/* Landscape Orientation Fixes */
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: 60px 20px;
+  }
+
+  .hero-content {
+    padding: 25px 30px;
+  }
+
+  .hero-logo-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover effects on touch devices */
+  .hover-lift-premium:hover {
+    transform: none;
+  }
+
+  .glass-card:hover::before {
+    opacity: 0;
+  }
+
+  /* Make buttons slightly larger for touch */
+  .premium-btn {
+    padding: 16px 40px;
+    min-height: 44px;
+  }
+
+  /* Increase tap targets */
+  .nav-link {
+    padding: 12px 8px;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Enhance blur effects on retina displays */
+  .glass-card {
+    backdrop-filter: blur(calc(var(--blur-amount) * 1.2)) saturate(180%);
+    -webkit-backdrop-filter: blur(calc(var(--blur-amount) * 1.2)) saturate(180%);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .hero-buttons,
+  .cart-sidebar,
+  .hero-scroll-indicator {
+    display: none !important;
+  }
+
+  .glass-card {
+    background: white !important;
+    border: 1px solid #ddd !important;
+  }
+
+  body {
+    background: white !important;
+  }
+}
