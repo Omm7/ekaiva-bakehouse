@@ -44,6 +44,27 @@
   will-change: transform, box-shadow;
 }
 
+/* Apply menu-style animation when scrolled into view */
+.feature-card.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px) translateZ(0);
+}
+
+.feature-card.animate-on-scroll.animate-in {
+  animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+}
+
 .feature-card::before {
   content: '';
   position: absolute;
